@@ -1,0 +1,387 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY cow_db "http://localhost/cow_db.owl#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY cow_ontology "http://localhost/cow_ontology.owl#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://localhost/cow_db.owl#"
+     xml:base="http://localhost/cow_db.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:cow_db="http://localhost/cow_db.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:cow_ontology="http://localhost/cow_ontology.owl#">
+    <owl:Ontology rdf:about="http://localhost/cow_ontology.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#has -->
+
+    <owl:ObjectProperty rdf:about="&cow_ontology;has">
+        <rdfs:domain rdf:resource="&cow_ontology;Disease"/>
+        <rdfs:range rdf:resource="&cow_ontology;Symptom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#suffers -->
+
+    <owl:ObjectProperty rdf:about="&cow_ontology;suffers">
+        <rdfs:domain rdf:resource="&cow_ontology;Cow"/>
+        <rdfs:range rdf:resource="&cow_ontology;Disease"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#age -->
+
+    <owl:DatatypeProperty rdf:about="&cow_ontology;age">
+        <rdfs:domain rdf:resource="&cow_ontology;Cow"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#calf_afflict_age -->
+
+    <owl:DatatypeProperty rdf:about="&cow_ontology;calf_afflict_age">
+        <rdfs:domain rdf:resource="&cow_ontology;Disease"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#cow_afflict_age -->
+
+    <owl:DatatypeProperty rdf:about="&cow_ontology;cow_afflict_age">
+        <rdfs:domain rdf:resource="&cow_ontology;Disease"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#disease_id -->
+
+    <owl:DatatypeProperty rdf:about="&cow_ontology;disease_id">
+        <rdfs:domain rdf:resource="&cow_ontology;Disease"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#disease_name -->
+
+    <owl:DatatypeProperty rdf:about="&cow_ontology;disease_name">
+        <rdfs:domain rdf:resource="&cow_ontology;Disease"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="&cow_ontology;name">
+        <rdfs:domain rdf:resource="&cow_ontology;Cow"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#owner -->
+
+    <owl:DatatypeProperty rdf:about="&cow_ontology;owner">
+        <rdfs:domain rdf:resource="&cow_ontology;Cow"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#symp_id -->
+
+    <owl:DatatypeProperty rdf:about="&cow_ontology;symp_id">
+        <rdfs:domain rdf:resource="&cow_ontology;Symptom"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#symp_name -->
+
+    <owl:DatatypeProperty rdf:about="&cow_ontology;symp_name">
+        <rdfs:domain rdf:resource="&cow_ontology;Symptom"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#AdultCow -->
+
+    <owl:Class rdf:about="&cow_ontology;AdultCow">
+        <rdfs:subClassOf rdf:resource="&cow_ontology;Cow"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#Calf -->
+
+    <owl:Class rdf:about="&cow_ontology;Calf">
+        <rdfs:subClassOf rdf:resource="&cow_ontology;Cow"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#Cow -->
+
+    <owl:Class rdf:about="&cow_ontology;Cow"/>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#Disease -->
+
+    <owl:Class rdf:about="&cow_ontology;Disease"/>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#Symptom -->
+
+    <owl:Class rdf:about="&cow_ontology;Symptom"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#D_BA -->
+
+    <owl:NamedIndividual rdf:about="&cow_ontology;D_BA">
+        <rdf:type rdf:resource="&cow_ontology;Disease"/>
+        <cow_ontology:cow_afflict_age rdf:datatype="&xsd;integer">-1</cow_ontology:cow_afflict_age>
+        <cow_ontology:disease_id rdf:datatype="&xsd;integer">1</cow_ontology:disease_id>
+        <cow_ontology:calf_afflict_age rdf:datatype="&xsd;integer">6</cow_ontology:calf_afflict_age>
+        <cow_ontology:disease_name rdf:datatype="&xsd;string">Bovine Anaemia</cow_ontology:disease_name>
+        <cow_ontology:has rdf:resource="&cow_ontology;S_EI"/>
+        <cow_ontology:has rdf:resource="&cow_ontology;S_LOA"/>
+        <cow_ontology:has rdf:resource="&cow_ontology;S_LTG"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#D_BVD -->
+
+    <owl:NamedIndividual rdf:about="&cow_ontology;D_BVD">
+        <rdf:type rdf:resource="&cow_ontology;Disease"/>
+        <cow_ontology:cow_afflict_age rdf:datatype="&xsd;integer">0</cow_ontology:cow_afflict_age>
+        <cow_ontology:calf_afflict_age rdf:datatype="&xsd;integer">1</cow_ontology:calf_afflict_age>
+        <cow_ontology:calf_afflict_age rdf:datatype="&xsd;integer">2</cow_ontology:calf_afflict_age>
+        <cow_ontology:disease_id rdf:datatype="&xsd;integer">2</cow_ontology:disease_id>
+        <cow_ontology:disease_name rdf:datatype="&xsd;string">Bovine Viral Diarrhoea (BVD)</cow_ontology:disease_name>
+        <cow_ontology:has rdf:resource="&cow_ontology;S_DMP"/>
+        <cow_ontology:has rdf:resource="&cow_ontology;S_DRH"/>
+        <cow_ontology:has rdf:resource="&cow_ontology;S_FVR"/>
+        <cow_ontology:has rdf:resource="&cow_ontology;S_LOA"/>
+        <cow_ontology:has rdf:resource="&cow_ontology;S_LTG"/>
+        <cow_ontology:has rdf:resource="&cow_ontology;S_ND"/>
+        <cow_ontology:has rdf:resource="&cow_ontology;S_OD"/>
+        <cow_ontology:has rdf:resource="&cow_ontology;S_OL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#D_SV -->
+
+    <owl:NamedIndividual rdf:about="&cow_ontology;D_SV">
+        <rdf:type rdf:resource="&cow_ontology;Disease"/>
+        <cow_ontology:disease_id rdf:datatype="&xsd;integer">3</cow_ontology:disease_id>
+        <cow_ontology:cow_afflict_age rdf:datatype="&xsd;integer">48</cow_ontology:cow_afflict_age>
+        <cow_ontology:calf_afflict_age rdf:datatype="&xsd;integer">6</cow_ontology:calf_afflict_age>
+        <cow_ontology:disease_name rdf:datatype="&xsd;string">Schmallenberg Virus</cow_ontology:disease_name>
+        <cow_ontology:has rdf:resource="&cow_ontology;S_ANX"/>
+        <cow_ontology:has rdf:resource="&cow_ontology;S_DMP"/>
+        <cow_ontology:has rdf:resource="&cow_ontology;S_DRH"/>
+        <cow_ontology:has rdf:resource="&cow_ontology;S_FVR"/>
+        <cow_ontology:has rdf:resource="&cow_ontology;S_IGC"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#S_ANX -->
+
+    <owl:NamedIndividual rdf:about="&cow_ontology;S_ANX">
+        <cow_ontology:symp_id rdf:datatype="&xsd;integer">11</cow_ontology:symp_id>
+        <cow_ontology:symp_name rdf:datatype="&xsd;string">anorexia</cow_ontology:symp_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#S_DMP -->
+
+    <owl:NamedIndividual rdf:about="&cow_ontology;S_DMP">
+        <rdf:type rdf:resource="&cow_ontology;Symptom"/>
+        <cow_ontology:symp_id rdf:datatype="&xsd;integer">9</cow_ontology:symp_id>
+        <cow_ontology:symp_name rdf:datatype="&xsd;string">decreasing milk production</cow_ontology:symp_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#S_DRH -->
+
+    <owl:NamedIndividual rdf:about="&cow_ontology;S_DRH">
+        <rdf:type rdf:resource="&cow_ontology;Symptom"/>
+        <cow_ontology:symp_id rdf:datatype="&xsd;integer">8</cow_ontology:symp_id>
+        <cow_ontology:symp_name rdf:datatype="&xsd;string">diarrhoea</cow_ontology:symp_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#S_EI -->
+
+    <owl:NamedIndividual rdf:about="&cow_ontology;S_EI">
+        <rdf:type rdf:resource="&cow_ontology;Symptom"/>
+        <cow_ontology:symp_id rdf:datatype="&xsd;integer">3</cow_ontology:symp_id>
+        <cow_ontology:symp_name rdf:datatype="&xsd;string">exercise intolerance</cow_ontology:symp_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#S_FVR -->
+
+    <owl:NamedIndividual rdf:about="&cow_ontology;S_FVR">
+        <rdf:type rdf:resource="&cow_ontology;Symptom"/>
+        <cow_ontology:symp_id rdf:datatype="&xsd;integer">4</cow_ontology:symp_id>
+        <cow_ontology:symp_name rdf:datatype="&xsd;string">fever</cow_ontology:symp_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#S_IGC -->
+
+    <owl:NamedIndividual rdf:about="&cow_ontology;S_IGC">
+        <rdf:type rdf:resource="&cow_ontology;Symptom"/>
+        <cow_ontology:symp_id rdf:datatype="&xsd;integer">10</cow_ontology:symp_id>
+        <cow_ontology:symp_name rdf:datatype="&xsd;string">impaired general condition</cow_ontology:symp_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#S_LOA -->
+
+    <owl:NamedIndividual rdf:about="&cow_ontology;S_LOA">
+        <rdf:type rdf:resource="&cow_ontology;Symptom"/>
+        <cow_ontology:symp_id rdf:datatype="&xsd;integer">2</cow_ontology:symp_id>
+        <cow_ontology:symp_name rdf:datatype="&xsd;string">lack of appetite</cow_ontology:symp_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#S_LTG -->
+
+    <owl:NamedIndividual rdf:about="&cow_ontology;S_LTG">
+        <rdf:type rdf:resource="&cow_ontology;Symptom"/>
+        <cow_ontology:symp_id rdf:datatype="&xsd;integer">1</cow_ontology:symp_id>
+        <cow_ontology:symp_name rdf:datatype="&xsd;string">lethargy</cow_ontology:symp_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#S_ND -->
+
+    <owl:NamedIndividual rdf:about="&cow_ontology;S_ND">
+        <rdf:type rdf:resource="&cow_ontology;Symptom"/>
+        <cow_ontology:symp_id rdf:datatype="&xsd;integer">6</cow_ontology:symp_id>
+        <cow_ontology:symp_name rdf:datatype="&xsd;string">nasal dischargem</cow_ontology:symp_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#S_OD -->
+
+    <owl:NamedIndividual rdf:about="&cow_ontology;S_OD">
+        <rdf:type rdf:resource="&cow_ontology;Symptom"/>
+        <cow_ontology:symp_id rdf:datatype="&xsd;integer">5</cow_ontology:symp_id>
+        <cow_ontology:symp_name rdf:datatype="&xsd;string">ocular discharge</cow_ontology:symp_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/cow_ontology.owl#S_OL -->
+
+    <owl:NamedIndividual rdf:about="&cow_ontology;S_OL">
+        <rdf:type rdf:resource="&cow_ontology;Symptom"/>
+        <cow_ontology:symp_id rdf:datatype="&xsd;integer">7</cow_ontology:symp_id>
+        <cow_ontology:symp_name rdf:datatype="&xsd;string">oral lesions</cow_ontology:symp_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cow_ontology;AdultCow"/>
+            <rdf:Description rdf:about="&cow_ontology;Calf"/>
+            <rdf:Description rdf:about="&cow_ontology;Disease"/>
+            <rdf:Description rdf:about="&cow_ontology;Symptom"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
